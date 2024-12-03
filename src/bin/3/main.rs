@@ -14,7 +14,7 @@ fn main() -> Result<()> {
 fn part1(input: &str) -> Result<()> {
     let mut sum = 0;
     for (begin, _) in input.match_indices("mul(") {
-        let Some(end) = (&input[begin..]).find(")") else {
+        let Some(end) = input[begin..].find(")") else {
             continue;
         };
 
@@ -70,7 +70,7 @@ fn part2(input: &str) -> Result<()> {
     }
 
     for (begin, _) in input.match_indices("mul(") {
-        let Some(end) = (&input[begin..]).find(")") else {
+        let Some(end) = input[begin..].find(")") else {
             continue;
         };
 

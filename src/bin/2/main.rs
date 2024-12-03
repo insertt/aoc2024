@@ -83,12 +83,12 @@ fn part2(input: &str) -> Result<()> {
             }
         }
 
-        fn is_ok(nums: &Vec<i64>) -> bool {
+        fn is_ok(nums: &[i64]) -> bool {
             let signum = (nums[0] - nums[1]).signum();
             find_first_unsafe(nums, signum).is_none()
         }
 
-        fn find_first_unsafe(nums: &Vec<i64>, signum: i64) -> Option<usize> {
+        fn find_first_unsafe(nums: &[i64], signum: i64) -> Option<usize> {
             for (i, [f, s]) in nums.array_windows::<2>().copied().enumerate() {
                 let diff = (f - s).abs();
 
@@ -107,7 +107,7 @@ fn part2(input: &str) -> Result<()> {
                 }
             }
 
-            return None;
+            None
         }
     }
 
